@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Gmail Empty Subject Checker/Validator",
+  "short_name": "Gmail Subject Checker/Validator",
+  "version": "1.1.0",
+  "description": "In Gmail, this Chrome extension will not allow you to send an email if the Subject field is empty",
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": ["extensionInjector.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": ["gmailJsLoader.js", "extension.js"],
+  "permissions": ["https://*/*"],
+  "icons": {
+    "16": "fullscreen.png",
+    "48": "fullscreen.png",
+    "128": "fullscreen.png"
+  }
+}
